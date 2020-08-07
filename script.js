@@ -10,13 +10,13 @@ const rate = document.getElementById('rate');
 function calculate() {
     const currency1 = currencyOne.value;
     const currency2 = currencyTwo.value;
-
-    fetch(`https://open.exchangerate-api.com/v6/latest/${currency1}`)
+    
+    fetch(`https://api.exchangeratesapi.io/latest?base=${currency1}`)
         .then(response => response.json())
         .then(data => {
-            const rate = data.rates[currency2];
-            rate.innerText = `1 ${currency1} = ${rate} ${currrency2}`;
-            amountTwo.value = (amountOne.value * rate).toFixed(2);
+            const rateValue = data.rates[currency2];
+            rate.innerText = `1 ${currency1} = ${rateValue} ${currency2}`;
+            amountTwo.value = (amountOne.value * rateValue).toFixed(2);
         });
 }
 

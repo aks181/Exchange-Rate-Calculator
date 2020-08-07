@@ -20,11 +20,13 @@ body {
 
 h1 {
     color: var(--primary-color);
+    text-align: center;
     text-decoration: underline;
 }
 
 p {
     text-align: center;
+    padding: 0 10px;
 }
 
 .container {
